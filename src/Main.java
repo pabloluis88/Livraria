@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
@@ -35,11 +36,23 @@ public class Main {
                     System.out.println("Cliente cadastrado com sucesso.");
                 }
                 case 2 -> {
+                    Livro livro = new Livro();
+                    System.out.print("ID: ");
+                    livro.setId(Integer.parseInt(sc.nextLine()));
+                    System.out.print("Título: ");
+                    livro.setTitulo(sc.nextLine());
+                    System.out.print("Autor: ");
+                    livro.setAutor(sc.nextLine());
+                    livro.setDisponivel(true); // Por padrão, o livro está disponível
+                    livro.setDataCadastro(String.valueOf(LocalDate.now()));
+                    livro.setDataAtualizacao(String.valueOf(LocalDate.now()));
+                    service.cadastrarLivro(livro);
+                    System.out.println("Livro cadastrado com sucesso.");
 
                 }
                 case 3 -> {
-                        // Lógica para listar clientes
                         System.out.println("Listar Clientes");
+                        service.listarClientes().forEach(System.out::println);
 
                 }
                 case 4  -> {

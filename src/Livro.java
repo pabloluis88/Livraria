@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Livro {
 
     int id;
@@ -14,6 +17,10 @@ public class Livro {
         this.disponivel = disponivel;
         this.dataCadastro = dataCadastro;
         this.dataAtualizacao = dataAtualizacao;
+    }
+
+    public Livro() {
+
     }
 
     public int getId() {
