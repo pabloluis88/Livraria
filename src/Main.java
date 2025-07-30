@@ -56,9 +56,8 @@ public class Main {
 
                 }
                 case 4  -> {
-                    // Lógica para listar livros
                     System.out.println("Listar Livros");
-                    // Implementar lógica de listagem
+                    service.listarLivros().forEach(System.out::println);
                 }
                 case 5  -> {
                     // Lógica para consultar histórico de empréstimos

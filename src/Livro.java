@@ -19,10 +19,25 @@ public class Livro {
         this.dataAtualizacao = dataAtualizacao;
     }
 
+    private List<Livro> livros = new ArrayList<>();
+
     public Livro() {
 
     }
 
+    public List<Livro> listarLivros() {
+        return livros;
+    }
+
+    @Override
+    public String toString() {
+        return "Livro {" +
+                "id=" + getId() +
+                ", titulo='" + getTitulo() + '\'' +
+                ", autor='" + getAutor() + '\'' +
+                ", disponivel='" + isDisponivel() + '\'' +
+                '}';
+    }
     public int getId() {
         return id;
     }
