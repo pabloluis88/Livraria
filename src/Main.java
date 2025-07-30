@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         BibliotecaService service = new BibliotecaService();
+        Livro livro = new Livro();
 
         int opcao;
         do {
@@ -36,7 +37,7 @@ public class Main {
                     System.out.println("Cliente cadastrado com sucesso.");
                 }
                 case 2 -> {
-                    Livro livro = new Livro();
+
                     System.out.print("ID: ");
                     livro.setId(Integer.parseInt(sc.nextLine()));
                     System.out.print("Título: ");
@@ -68,7 +69,13 @@ public class Main {
                 case 6-> {
                     // Lógica para buscar livro por título ou autor
                     System.out.println("Buscar livro por título ou autor");
-                    // Implementar lógica de busca
+                    Livro resultado = livro.findByName(sc.nextLine());
+
+                    if (resultado != null) {
+                        System.out.println("Livro encontrado: " + resultado);
+                    } else {
+                        System.out.println("Livro não encontrado.");
+                    }
                 }
 
                 case 7 -> {

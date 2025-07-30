@@ -38,6 +38,17 @@ public class Livro {
                 ", disponivel='" + isDisponivel() + '\'' +
                 '}';
     }
+
+    public Livro findByName(String titulo) {
+        for (Livro livro : livros) {
+            if (livro.getTitulo().equalsIgnoreCase(titulo)) {
+                return livro;
+            }
+        }
+        return null;
+    }
+
+
     public int getId() {
         return id;
     }
