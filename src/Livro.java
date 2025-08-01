@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Livro {
-
     int id;
     String titulo;
     String autor;
@@ -19,14 +18,7 @@ public class Livro {
         this.dataAtualizacao = dataAtualizacao;
     }
 
-    private List<Livro> livros = new ArrayList<>();
-
     public Livro() {
-
-    }
-
-    public List<Livro> listarLivros() {
-        return livros;
     }
 
     @Override
@@ -35,20 +27,11 @@ public class Livro {
                 "id=" + getId() +
                 ", titulo='" + getTitulo() + '\'' +
                 ", autor='" + getAutor() + '\'' +
-                ", disponivel='" + isDisponivel() + '\'' +
+                ", disponivel=" + isDisponivel() +
                 '}';
     }
 
-    public Livro findByName(String titulo) {
-        for (Livro livro : livros) {
-            if (livro.getTitulo().equalsIgnoreCase(titulo)) {
-                return livro;
-            }
-        }
-        return null;
-    }
-
-
+    // Getters e Setters
     public int getId() {
         return id;
     }
@@ -97,6 +80,3 @@ public class Livro {
         this.dataAtualizacao = dataAtualizacao;
     }
 }
-
-
-
